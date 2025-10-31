@@ -1,0 +1,14 @@
+services:
+  openarena:
+    container_name: openarena
+    image: fgracia/openarena:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/data
+    ports:
+      - "27950:27950/udp"
+      - "27960:27960/udp"
+    restart: always
+
